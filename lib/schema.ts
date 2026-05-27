@@ -22,6 +22,8 @@ export const dishFrontmatterSchema = z.object({
   video: z.string().optional(),
   // Optional signature animation id, resolved against the animation registry.
   animation: z.string().optional(),
+  // Optional signature "how it's made" video (autoplay-on-view loop).
+  signatureVideo: z.string().optional(),
   places: z.array(placeSchema).default([]),
   // Quiz groundwork (optional, unused by MVP UI):
   tags: z.array(z.string()).default([]),

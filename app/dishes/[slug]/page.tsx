@@ -10,6 +10,7 @@ import { MediaGallery } from "@/components/MediaGallery";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { WhereToEat } from "@/components/WhereToEat";
 import { DishAnimation } from "@/components/animations/DishAnimation";
+import { SignatureVideo } from "@/components/animations/SignatureVideo";
 import { dishJsonLd } from "@/lib/jsonld";
 
 export function generateStaticParams() {
@@ -91,11 +92,19 @@ export default async function DishPage({
         />
       </div>
 
-      {dish.animation && (
+      {dish.signatureVideo ? (
+        <div className="mt-6">
+          <SignatureVideo
+            src={dish.signatureVideo}
+            poster={dish.heroImage}
+            title={`How ${dish.title} is made`}
+          />
+        </div>
+      ) : dish.animation ? (
         <div className="mt-6">
           <DishAnimation id={dish.animation} />
         </div>
-      )}
+      ) : null}
 
       {dish.video && (
         <div className="mt-6">
