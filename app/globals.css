@@ -102,26 +102,9 @@
   --c-sand-200: 227 216 193;
 }
 
-/* Display (heading) font, swapped at runtime via data-font on <html>. */
-[data-font="poppins"] {
-  --font-display: var(--font-poppins);
-}
-[data-font="nunito"] {
-  --font-display: var(--font-nunito);
-}
-[data-font="outfit"] {
-  --font-display: var(--font-outfit);
-}
-[data-font="fraunces"] {
-  --font-display: var(--font-fraunces);
-}
-:root,
-[data-font="space-grotesk"] {
-  --font-display: var(--font-space-grotesk);
-}
-
 :root {
   color-scheme: light;
+  --font-display: var(--font-space-grotesk);
 }
 
 body {

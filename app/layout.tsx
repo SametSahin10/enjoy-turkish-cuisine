@@ -1,39 +1,14 @@
 import type { Metadata } from "next";
-import {
-  Inter,
-  Poppins,
-  Nunito,
-  Outfit,
-  Fraunces,
-  Space_Grotesk,
-} from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site";
-import { FontSwitcher } from "@/components/FontSwitcher";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-poppins",
-});
-const nunito = Nunito({ subsets: ["latin"], variable: "--font-nunito" });
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
-const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces" });
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space-grotesk",
 });
-
-const fontVars = [
-  inter.variable,
-  poppins.variable,
-  nunito.variable,
-  outfit.variable,
-  fraunces.variable,
-  spaceGrotesk.variable,
-].join(" ");
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -65,16 +40,8 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="bosphorus"
-      data-font="space-grotesk"
-      className={fontVars}
+      className={`${inter.variable} ${spaceGrotesk.variable}`}
     >
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `try{var f=localStorage.getItem('font');if(f){document.documentElement.dataset.font=f}}catch(e){}`,
-          }}
-        />
-      </head>
       <body className="flex min-h-screen flex-col">
         <header className="border-b border-sand-200 bg-white/80 backdrop-blur">
           <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
@@ -105,8 +72,6 @@ export default function RootLayout({
             </p>
           </div>
         </footer>
-
-        <FontSwitcher />
       </body>
     </html>
   );
