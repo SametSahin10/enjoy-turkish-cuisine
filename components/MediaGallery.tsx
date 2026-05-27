@@ -18,7 +18,7 @@ export function MediaGallery({
         >
           <Image
             src={src}
-            alt={`${title} — photo ${i + 1}`}
+            alt={`${title}, photo ${i + 1}`}
             fill
             sizes="(max-width: 640px) 50vw, 33vw"
             className="object-cover"

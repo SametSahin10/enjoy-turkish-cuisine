@@ -1,6 +1,6 @@
 # Enjoy Turkish Cuisine
 
-A showcase of Turkish dishes and desserts for tourists — photos, short videos, descriptions, and
+A showcase of Turkish dishes and desserts for tourists: photos, short videos, descriptions, and
 "where to eat" recommendations. Built with Next.js (App Router) + TypeScript + Tailwind CSS, with
 SEO-first static generation.
 
@@ -29,7 +29,7 @@ To add a dish: create a new `.mdx` file in `content/dishes/`, drop media into
 
 1. Go to [vercel.com](https://vercel.com) and sign in with GitHub.
 2. **Add New → Project** → import `sametsahin10/enjoy-turkish-cuisine`.
-3. Vercel auto-detects Next.js — no configuration needed. Click **Deploy**.
+3. Vercel auto-detects Next.js, no configuration needed. Click **Deploy**.
 
 Every push to a branch gets its own preview URL automatically; pushes to the production branch
 update the live site.

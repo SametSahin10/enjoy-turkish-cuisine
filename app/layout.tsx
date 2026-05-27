@@ -13,8 +13,8 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — A Tourist's Guide to Turkish Food`,
-    template: `%s — ${siteConfig.name}`,
+    default: `${siteConfig.name}: A Tourist's Guide to Turkish Food`,
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   openGraph: {
@@ -63,7 +63,7 @@ export default function RootLayout({
         <footer className="border-t border-sand-200 bg-white">
           <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-stone-500">
             <p>
-              {siteConfig.name} — discover the flavors of Turkey. Made for
+              {siteConfig.name}. Discover the flavors of Türkiye. Made for
               travelers.
             </p>
           </div>
