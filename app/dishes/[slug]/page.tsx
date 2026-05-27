@@ -56,8 +56,30 @@ export default async function DishPage({
   const dish = getDishBySlug(slug);
   if (!dish) notFound();
 
+  const leadIsHero = !dish.signatureVideo && !dish.animation;
+  const galleryImages = leadIsHero
+    ? dish.gallery
+    : [dish.heroImage, ...dish.gallery];
+
+  const leadMedia = dish.signatureVideo ? (
+    <SignatureVideo src={dish.signatureVideo} poster={dish.heroImage} />
+  ) : dish.animation ? (
+    <DishAnimation id={dish.animation} />
+  ) : (
+    <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-sand-100 ring-1 ring-sand-200">
+      <Image
+        src={dish.heroImage}
+        alt={dish.title}
+        fill
+        priority
+        sizes="(max-width: 1024px) 100vw, 512px"
+        className="object-cover"
+      />
+    </div>
+  );
+
   return (
-    <article className="mx-auto max-w-3xl px-4 py-12">
+    <article className="mx-auto max-w-5xl px-4 py-12">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(dishJsonLd(dish)) }}
@@ -70,44 +92,26 @@ export default async function DishPage({
         / <span className="text-stone-700">{dish.title}</span>
       </nav>
 
-      <header>
-        <span className="text-xs font-semibold uppercase tracking-wide text-turquoise-600">
-          {CATEGORY_LABELS[dish.category]}
-          {dish.region ? ` · ${dish.region}` : ""}
-        </span>
-        <h1 className="mt-1 font-display text-4xl font-bold text-stone-800">
-          {dish.title}
-        </h1>
-        <p className="mt-3 text-lg text-stone-600">{dish.shortDescription}</p>
-      </header>
+      <section className="grid gap-8 lg:grid-cols-2 lg:items-center">
+        <div className="lg:order-2">{leadMedia}</div>
+        <header className="lg:order-1">
+          <span className="text-xs font-semibold uppercase tracking-wide text-turquoise-600">
+            {CATEGORY_LABELS[dish.category]}
+            {dish.region ? ` · ${dish.region}` : ""}
+          </span>
+          <h1 className="mt-1 font-display text-4xl font-bold text-stone-800">
+            {dish.title}
+          </h1>
+          <p className="mt-3 text-lg text-stone-600">{dish.shortDescription}</p>
+        </header>
+      </section>
 
-      <div className="relative mt-6 aspect-[16/9] overflow-hidden rounded-2xl bg-sand-100 ring-1 ring-sand-200">
-        <Image
-          src={dish.heroImage}
-          alt={dish.title}
-          fill
-          priority
-          sizes="(max-width: 768px) 100vw, 768px"
-          className="object-cover"
-        />
+      <div className="prose prose-stone mt-10 max-w-3xl prose-headings:font-display prose-a:text-paprika-600">
+        <MDXRemote source={dish.content} />
       </div>
 
-      {dish.signatureVideo ? (
-        <div className="mt-6">
-          <SignatureVideo
-            src={dish.signatureVideo}
-            poster={dish.heroImage}
-            title={`How ${dish.title} is made`}
-          />
-        </div>
-      ) : dish.animation ? (
-        <div className="mt-6">
-          <DishAnimation id={dish.animation} />
-        </div>
-      ) : null}
-
       {dish.video && (
-        <div className="mt-6">
+        <div className="mt-6 max-w-3xl">
           <VideoPlayer
             src={dish.video}
             poster={dish.heroImage}
@@ -116,17 +120,13 @@ export default async function DishPage({
         </div>
       )}
 
-      <div className="prose prose-stone mt-8 max-w-none prose-headings:font-display prose-a:text-paprika-600">
-        <MDXRemote source={dish.content} />
-      </div>
-
-      {dish.gallery.length > 0 && (
+      {galleryImages.length > 0 && (
         <section className="mt-10">
           <h2 className="font-display text-2xl font-bold text-stone-800">
             Gallery
           </h2>
           <div className="mt-4">
-            <MediaGallery images={dish.gallery} title={dish.title} />
+            <MediaGallery images={galleryImages} title={dish.title} />
           </div>
         </section>
       )}

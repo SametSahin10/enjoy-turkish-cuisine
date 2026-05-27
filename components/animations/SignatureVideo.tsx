@@ -40,7 +40,7 @@ export function SignatureVideo({
   return (
     <figure className="overflow-hidden rounded-2xl bg-sand-100 ring-1 ring-sand-200">
       {title && (
-        <figcaption className="px-5 pt-4 font-display text-sm font-semibold text-stone-700">
+        <figcaption className="px-5 pb-3 pt-4 font-display text-sm font-semibold text-stone-700">
           {title}
         </figcaption>
       )}
@@ -54,7 +54,7 @@ export function SignatureVideo({
         preload="metadata"
         controls={!!reduce}
         autoPlay={!reduce}
-        className="mt-3 w-full"
+        className="w-full"
       />
       {caption && (
         <p className="px-5 pb-4 pt-3 text-xs text-stone-500">{caption}</p>
