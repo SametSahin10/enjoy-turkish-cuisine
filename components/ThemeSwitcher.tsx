@@ -11,7 +11,7 @@ const THEMES = [
 ] as const;
 
 export const THEME_IDS = THEMES.map((t) => t.id);
-export const DEFAULT_THEME = "anatolia";
+export const DEFAULT_THEME = "bosphorus";
 
 export function ThemeSwitcher() {
   const [active, setActive] = useState<string>(DEFAULT_THEME);

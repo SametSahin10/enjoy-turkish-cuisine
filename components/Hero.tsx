@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-paprika-600 via-paprika-500 to-turquoise-600">
+    <section className="relative overflow-hidden bg-paprika-600">
       <div className="mx-auto max-w-6xl px-4 py-20 text-center text-white sm:py-28">
         <h1 className="font-display text-4xl font-bold leading-tight sm:text-6xl">
           Taste Your Way Through Türkiye
