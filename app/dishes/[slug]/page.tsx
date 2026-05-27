@@ -9,6 +9,7 @@ import { siteConfig } from "@/lib/site";
 import { MediaGallery } from "@/components/MediaGallery";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { WhereToEat } from "@/components/WhereToEat";
+import { DishAnimation } from "@/components/animations/DishAnimation";
 import { dishJsonLd } from "@/lib/jsonld";
 
 export function generateStaticParams() {
@@ -89,6 +90,12 @@ export default async function DishPage({
           className="object-cover"
         />
       </div>
+
+      {dish.animation && (
+        <div className="mt-6">
+          <DishAnimation id={dish.animation} />
+        </div>
+      )}
 
       {dish.video && (
         <div className="mt-6">

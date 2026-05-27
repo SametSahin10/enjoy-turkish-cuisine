@@ -20,6 +20,8 @@ export const dishFrontmatterSchema = z.object({
   heroImage: z.string(),
   gallery: z.array(z.string()).default([]),
   video: z.string().optional(),
+  // Optional signature animation id, resolved against the animation registry.
+  animation: z.string().optional(),
   places: z.array(placeSchema).default([]),
   // Quiz groundwork (optional, unused by MVP UI):
   tags: z.array(z.string()).default([]),
