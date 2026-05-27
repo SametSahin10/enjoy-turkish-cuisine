@@ -10,7 +10,7 @@ const FONTS = [
   { id: "space-grotesk", label: "Space Grotesk", var: "var(--font-space-grotesk)" },
 ] as const;
 
-export const DEFAULT_FONT = "poppins";
+export const DEFAULT_FONT = "space-grotesk";
 
 export function FontSwitcher() {
   const [active, setActive] = useState<string>(DEFAULT_FONT);

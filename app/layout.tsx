@@ -65,7 +65,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="bosphorus"
-      data-font="poppins"
+      data-font="space-grotesk"
       className={fontVars}
     >
       <head>

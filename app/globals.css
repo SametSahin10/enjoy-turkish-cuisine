@@ -103,7 +103,6 @@
 }
 
 /* Display (heading) font, swapped at runtime via data-font on <html>. */
-:root,
 [data-font="poppins"] {
   --font-display: var(--font-poppins);
 }
@@ -116,6 +115,7 @@
 [data-font="fraunces"] {
   --font-display: var(--font-fraunces);
 }
+:root,
 [data-font="space-grotesk"] {
   --font-display: var(--font-space-grotesk);
 }
