@@ -2,6 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Theme palettes. Each theme redefines three brand color families as RGB
+  channel triples so Tailwind classes (paprika-*, turquoise-*, sand-*) and
+  alpha modifiers keep working. Switch by setting data-theme on <html>.
+  - paprika  = primary / accent
+  - turquoise = secondary accent
+  - sand     = warm page background family
+*/
+
+:root,
+[data-theme="anatolia"] {
+  --c-paprika-50: 253 243 240;
+  --c-paprika-100: 251 226 219;
+  --c-paprika-200: 245 198 184;
+  --c-paprika-500: 210 80 42;
+  --c-paprika-600: 184 63 31;
+  --c-paprika-700: 151 51 26;
+  --c-turquoise-50: 238 252 251;
+  --c-turquoise-100: 211 245 242;
+  --c-turquoise-200: 167 233 227;
+  --c-turquoise-500: 26 167 160;
+  --c-turquoise-600: 19 138 132;
+  --c-turquoise-700: 15 110 105;
+  --c-sand-50: 250 247 240;
+  --c-sand-100: 243 236 220;
+  --c-sand-200: 231 217 189;
+}
+
+[data-theme="bosphorus"] {
+  --c-paprika-50: 238 244 251;
+  --c-paprika-100: 214 228 245;
+  --c-paprika-200: 174 202 233;
+  --c-paprika-500: 47 111 176;
+  --c-paprika-600: 31 85 144;
+  --c-paprika-700: 23 63 107;
+  --c-turquoise-50: 252 244 238;
+  --c-turquoise-100: 247 227 210;
+  --c-turquoise-200: 238 197 163;
+  --c-turquoise-500: 201 122 60;
+  --c-turquoise-600: 169 96 42;
+  --c-turquoise-700: 131 74 32;
+  --c-sand-50: 246 248 250;
+  --c-sand-100: 234 239 244;
+  --c-sand-200: 212 222 231;
+}
+
+[data-theme="pistachio"] {
+  --c-paprika-50: 243 248 236;
+  --c-paprika-100: 227 240 211;
+  --c-paprika-200: 199 224 168;
+  --c-paprika-500: 110 165 49;
+  --c-paprika-600: 88 135 38;
+  --c-paprika-700: 67 104 29;
+  --c-turquoise-50: 253 249 237;
+  --c-turquoise-100: 249 238 203;
+  --c-turquoise-200: 241 219 151;
+  --c-turquoise-500: 214 165 42;
+  --c-turquoise-600: 183 138 31;
+  --c-turquoise-700: 143 106 24;
+  --c-sand-50: 250 248 240;
+  --c-sand-100: 242 238 218;
+  --c-sand-200: 229 222 188;
+}
+
+[data-theme="pomegranate"] {
+  --c-paprika-50: 252 240 241;
+  --c-paprika-100: 248 216 219;
+  --c-paprika-200: 239 176 182;
+  --c-paprika-500: 197 40 58;
+  --c-paprika-600: 165 29 46;
+  --c-paprika-700: 127 22 35;
+  --c-turquoise-50: 253 249 237;
+  --c-turquoise-100: 249 238 203;
+  --c-turquoise-200: 241 219 151;
+  --c-turquoise-500: 214 165 42;
+  --c-turquoise-600: 183 138 31;
+  --c-turquoise-700: 143 106 24;
+  --c-sand-50: 250 246 241;
+  --c-sand-100: 242 232 221;
+  --c-sand-200: 229 211 191;
+}
+
+[data-theme="saffron"] {
+  --c-paprika-50: 254 247 234;
+  --c-paprika-100: 253 235 196;
+  --c-paprika-200: 251 215 137;
+  --c-paprika-500: 232 164 23;
+  --c-paprika-600: 201 135 12;
+  --c-paprika-700: 156 103 8;
+  --c-turquoise-50: 238 247 246;
+  --c-turquoise-100: 207 234 231;
+  --c-turquoise-200: 160 214 207;
+  --c-turquoise-500: 22 138 130;
+  --c-turquoise-600: 15 111 105;
+  --c-turquoise-700: 11 82 78;
+  --c-sand-50: 250 248 243;
+  --c-sand-100: 241 236 223;
+  --c-sand-200: 227 216 193;
+}
+
 :root {
   color-scheme: light;
 }

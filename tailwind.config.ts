@@ -9,23 +9,28 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Warm, Turkish-inspired palette
+        // Brand families resolve to CSS variables so the active theme
+        // (set via data-theme on <html>) can swap them at runtime.
         paprika: {
-          50: "#fdf3f0",
-          100: "#fbe2db",
-          500: "#d2502a",
-          600: "#b83f1f",
-          700: "#97331a",
+          50: "rgb(var(--c-paprika-50) / <alpha-value>)",
+          100: "rgb(var(--c-paprika-100) / <alpha-value>)",
+          200: "rgb(var(--c-paprika-200) / <alpha-value>)",
+          500: "rgb(var(--c-paprika-500) / <alpha-value>)",
+          600: "rgb(var(--c-paprika-600) / <alpha-value>)",
+          700: "rgb(var(--c-paprika-700) / <alpha-value>)",
         },
         turquoise: {
-          50: "#eefcfb",
-          500: "#1aa7a0",
-          600: "#138a84",
+          50: "rgb(var(--c-turquoise-50) / <alpha-value>)",
+          100: "rgb(var(--c-turquoise-100) / <alpha-value>)",
+          200: "rgb(var(--c-turquoise-200) / <alpha-value>)",
+          500: "rgb(var(--c-turquoise-500) / <alpha-value>)",
+          600: "rgb(var(--c-turquoise-600) / <alpha-value>)",
+          700: "rgb(var(--c-turquoise-700) / <alpha-value>)",
         },
         sand: {
-          50: "#faf7f0",
-          100: "#f3ecdc",
-          200: "#e7d9bd",
+          50: "rgb(var(--c-sand-50) / <alpha-value>)",
+          100: "rgb(var(--c-sand-100) / <alpha-value>)",
+          200: "rgb(var(--c-sand-200) / <alpha-value>)",
         },
       },
       fontFamily: {

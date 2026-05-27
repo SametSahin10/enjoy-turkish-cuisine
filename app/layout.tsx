@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -37,7 +38,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html
+      lang="en"
+      data-theme="anatolia"
+      className={`${inter.variable} ${playfair.variable}`}
+    >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem('theme');if(t){document.documentElement.dataset.theme=t}}catch(e){}`,
+          }}
+        />
+      </head>
       <body className="flex min-h-screen flex-col">
         <header className="border-b border-sand-200 bg-white/80 backdrop-blur">
           <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
@@ -68,6 +80,8 @@ export default function RootLayout({
             </p>
           </div>
         </footer>
+
+        <ThemeSwitcher />
       </body>
     </html>
   );
